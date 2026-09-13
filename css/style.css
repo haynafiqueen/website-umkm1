@@ -14,26 +14,36 @@ body {
 .hero {
     padding: 36px;
     color: white;
-    backgrouns: #6f3b1f;
+    background: #6f3b1f;
     border-radius: 24px;
 }
 
 .eyebrow {
     margin: 0 0 8px;
     letter-spacing: 0.14em;
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .products {
-  padding-left: 1.2rem;
+    padding-left: 1.2rem;
 }
 
 button {
-  padding: 12px 18px;
-  color: #2f2118;
-  font-weight: 700;
-  cursor: pointer;
-  background: #ffd166;
-  border: 0;
-  border-radius: 999px;
+    padding: 12px 18px;
+    color:#2f2118;
+    font-weight: 700;
+    cursor: pointer;
+    background: #ffd166;
+    border: 0;
+    border-radius: 999px;
+
+}
+.promo-text {
+    display: none;
+    margin-top: 15px;
+    padding: 15px 20px;
+    background: #ffd166;
+    color: #2f2118;
+    border-radius: 12px;
+    font-weight: bold;
 }
