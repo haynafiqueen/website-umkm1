@@ -1,7 +1,4 @@
-const promoButton = document.querySelector('.promo-button');
-const promoText = document.querySelector('.promo-text');
+const rows = document.querySelectorAll("tbody tr");
 
-promoButton.addEventListener('click', () => {
-    promoText.style.display = 'block';
-    promoButton.textContent = "Beli 2 Gratis 1, khusus hari ini!";
-});
+console.log("Jumlah produk pada tabel:", rows.length);
+console.log("Caption tabel:", document.querySelector("caption").textContent);

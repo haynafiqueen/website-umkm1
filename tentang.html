@@ -1,40 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tentang Golden Hour - Website UMKM</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+
+<head>
+@@ -12,40 +12,62 @@
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
     <header class="site-header">
-      <nav class="nav" aria-label="Navigasi utama">
-        <a class="brand" href="index.html">Golden Hour</a>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a aria-current="page" href="tentang.html">Tentang Kami</a></li>
-        </ul>
-      </nav>
+        <nav class="nav" aria-label="Navigasi utama">
+            <a class="brand" href="index.html">Morning Haven</a>
+            <ul>
+            <a class="brand" href="index.html">
+                <img class="brand-mark" src="assest/images/logo_morninghaven.jpeg" alt="logo morning haven" width="34" height="34">
+                Morning Haven
+            </a>
+            <ul class="nav-list">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a class="active" aria-current="page" href="tentang.html">Tentang Kami</a></li>
+                <li><a href="index.html#kontak">Kontak</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main id="konten" class="page">
-      <section aria-labelledby="tentangS-title">
-        <p class="eyebrow">Cerita Usaha</p>
-        <h1 id="tentang-title">Tentang Golden Hour</h1>
-        <p>Golden Hour adalah UMKM fiktif yang mengolah kopi lokal untuk kebutuhan pembelajaran.</p>
-        <img src="assets\Goldenhour.jpeg" alt="Etalase Golden Hour berisi kemasan kopi lokal" />
-      </section>
-      <section aria-labelledby="nilai-title">
-        <h2 id="nilai-title">Nilai yang Kami Bawa</h2>
-        <ul>
-          <li>Bahan lokal dari petani sekitar.</li>
-          <li>Proses sederhana dan transparan.</li>
-          <li>Pelayanan ramah untuk pelanggan harian.</li>
-        </ul>
-      </section>
-    </main>
+        <section class="about-hero" aria-labelledby="tentang-title">
+            <span class="eyebrow">Cerita Usaha</span>
+            <h1 id="tentang-title">Tentang Morning Haven</h1>
+            <p class="about-desc">Lahir dari kecintaan pada seduhan lokal, Morning Haven menyajikan racikan biji kopi pilihan petani daerah untuk menemani setiap momen santai, nugas, hingga obrolan hangatmu.</p>
+            <div>
+                <span class="eyebrow">Bojong City</span>
+                <h1 id="tentang-title">Tentang Morning Haven</h1>
+                <p class="about-desc">Lahir dari kecintaan pada seduhan lokal, Morning Haven menyajikan racikan biji
+                    kopi pilihan petani daerah untuk menemani setiap momen santai, nugas, hingga obrolan hangatmu.</p>
+            </div>
+            <div class="about-img-wrapper">
+                <img src="assest/images/petani_kopi.jpeg" alt="Bulir Morning Haven" class="about-img" />
+                <img src="assest/images/petani_kopi.jpeg" alt="Ilustrasi kebun dan bulir morning haven" class="about-img" />
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="nilai-title">
+            <h2 id="nilai-title">Nilai yang Kami Bawa</h2>
+            <div class="section-head">
+                <h2 id="nilai-title">Nilai yang Kami Bawa</h2>
+                <p>Tiga hal yang selalu kami jaga di setiap cangkir yang kami sajikan.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-item">
+                    <span class="value-number">01</span>
+                    <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        aria-hidden="true">
+                        <path d="M12 21c-4-2-7-6-7-10a7 7 0 0 1 14 0c0 4-3 8-7 10Z" />
+                        <path d="M12 21V9" />
+                    </svg>
+                    <h3>Hasil Petani Lokal</h3>
+                    <p>Menggunakan biji kopi pilihan langsung dari petani di wilayah sekitar Bojong.</p>
+                </div>
+                <div class="value-item">
+                    <span class="value-number">02</span>
+                    <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        aria-hidden="true">
+                        <path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z" />
+                    </svg>
+                    <h3>Proses Terpercaya</h3>
+                    <p>Diolah secara telaten dengan standar kebersihan dan kesegaran yang terjamin.</p>
+                </div>
+                <div class="value-item">
+                    <span class="value-number">03</span>
+                    <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+                        aria-hidden="true">
+                        <path
+                            d="M20.8 8.6c0 4-4.4 7.2-8.8 10.4C7.6 15.8 3.2 12.6 3.2 8.6a4.6 4.6 0 0 1 8.8-1.9 4.6 4.6 0 0 1 8.8 1.9Z" />
+                    </svg>
+                    <h3>Pelayanan Hangat</h3>
+                    <p>Menghadirkan kenyamanan dan kehangatan dalam setiap cangkir seduhan.</p>
+                </div>
+@@ -56,6 +78,8 @@ <h3>Pelayanan Hangat</h3>
     <footer class="site-footer">
-      <p>&copy; 2026 Golden Hour. Data pada halaman ini bersifat dummy.</p>
+        <p>&copy; 2026 Morning Haven. Data pada halaman ini bersifat dummy.</p>
     </footer>
-  </body>
+
+    <script src="js/script.js"></script>
+</body>
+
 </html>
