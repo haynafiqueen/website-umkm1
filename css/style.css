@@ -76,7 +76,6 @@ img {
     padding: 36px 24px 64px;
 }
 
-/* Header & navigasi */
 #kontak {
     scroll-margin-top: 90px;
 }
@@ -164,7 +163,6 @@ img {
     }
 }
 
-/*Hero*/
 .hero {
     padding: 44px 32px;
     color: var(--paper);
@@ -241,7 +239,6 @@ button:active,
     }
 }
 
-/*Section*/
 .section {
     margin-top: 56px;
 }
@@ -261,7 +258,6 @@ button:active,
     color: var(--ink-soft);
 }
 
-/*Kontak*/
 .contact-card {
     background: var(--paper);
     border: 1px solid var(--line);
@@ -306,7 +302,6 @@ button:active,
     }
 }
 
-/*Product cards*/
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -374,7 +369,6 @@ button:active,
     margin-bottom: 8px;
 }
 
-/*Aside*/
 .aside-note {
     margin-top: 44px;
     background: var(--paper);
@@ -396,7 +390,6 @@ button:active,
     color: var(--ink-soft);
 }
 
-/*Hero card (Tentang / Produk / Galeri)*/
 .about-hero {
     background: var(--ink);
     border: 1px solid var(--line);
@@ -473,7 +466,6 @@ button:active,
     line-height: 1.55;
 }
 
-/*Produk — kategori & tabel*/
 .intro-lede {
     font-size: 1.05rem;
     color: var(--ink-soft);
@@ -558,7 +550,6 @@ tbody tr:last-child td {
     border-bottom: none;
 }
 
-/*Galeri*/
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -615,7 +606,6 @@ tbody tr:last-child td {
     width: 100%;
 }
 
-/*Asebilitas dan footer*/
 .skip-link {
     position: absolute;
     left: -9999px;

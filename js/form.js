@@ -6,10 +6,13 @@ form.addEventListener("submit", (event) => {
 
   const data = new FormData(form);
   preview.textContent = [
-    `Nama: ${data.get("nama")}`,
-    `Email: ${data.get("email")}`,
-    `Paket: ${data.get("paket")}`,
-    `Topik: ${data.get("topik")}`,
-    `Pesan: ${data.get("pesan")}`,
+    `Nama             : ${data.get("nama")}`,
+    `Email            : ${data.get("email")}`,
+    `WhatsApp         : ${data.get("whatsapp")}`,
+    `Waktu kontak     : ${data.get("waktu")}`,
+    `Paket            : ${data.get("paket")}`,
+    `Topik            : ${data.get("topik")}`,
+    `Metode kontak    : ${data.get("metode")}`,
+    `Pesan            : ${data.get("pesan")}`
   ].join("\n");
 });
