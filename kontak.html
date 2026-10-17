@@ -4,26 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kontak Morning Haven - Website UMKM</title>
+    <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/form.js" defer></script>
   </head>
-  <body>
-    <a class="skip-link" href="konten">Lewati ke konten utama</a>
-    <header class="site-header">
-      <nav class="nav" aria-label="Navigasi utama">
+  <header class="site-header">
+    <nav class="nav">
         <a class="brand" href="index.html">Morning Haven</a>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="tentang.html">Tentang Kami</a></li>
-          <li><a href="produk.html">Produk</a></li>
-           <li><a href="galeri.html">Galeri</a></li>
-          <li><a aria-current="page" href="kontak.html">Kontak</a></li>
+        <ul class="nav-list">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="tentang.html">Tentang Kami</a></li>
+            <li><a href="produk.html">Produk</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="kontak.html" aria-current="page">Kontak</a></li>
         </ul>
-      </nav>
-    </header>
+    </nav>
+</header>
     <main id="konten" class="page">
-      <h1>Kontak Morning Haven</h1>
-      <p>Silakan kirim pertanyaan tentang produk, pesanan, kerja sama, reservasi atau aduan.</p>
+    <main id="konten" class="page" tabindex="-1">
+      <seaction class="hero" aria-labelledby="kontak-hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">Bojong City</p>
+          <h1>Kontak Morning Haven</h1>
+          <p>Silakan kirim pertanyaan tentang produk, pesanan, kerja sama, reservasi atau aduan.</p>
       <form id="form-kontak" action="#" method="post">
   <div class="field">
     <label for="nama">Nama lengkap</label>
