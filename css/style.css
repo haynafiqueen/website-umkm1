@@ -1,7 +1,7 @@
 :root {
     --color-primary: #8a3961;
     --color-primary-strong: #a55081;
-    --color-text: #69014a;
+    --color-text: #471638;
     --color-muted: #79594E;
     --color-surface: #FBF1E7;
     --color-surface-soft: #F3E4D8;
@@ -15,11 +15,11 @@
     --radius-sm: 0.5rem;
     --radius-md: 0.875rem;
     --shadow-card: 0 0.5rem 1.5rem rgb(17, 17, 16);
-    --bg-interactive: #5e374a;
+    --bg-interactive: #873d61;
     --bg-interactive-strong: #b155a6;
     --color-on-accent: #c796b6;
     --radius-lg: 1.25rem;
-    --color-highlight: #8b3c74;
+    --color-highlight: #b15096;
     --color-highlight-strong: #b415b4;
     --color-success: #bd6da2;
     --color-success-bg: #ac789f;
@@ -762,4 +762,81 @@ input[type="checkbox"] {
     height: 220px;
     object-fit: cover;
     border-radius: var(--radius-sm);
+}
+
+.js-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-4);
+}
+
+.js-product-card {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.stock-badge {
+  display: inline-flex;
+  margin-block-start: var(--space-2);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: #dcfce7;
+  color: #166534;
+}
+
+.stock-badge.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.stock-badge.empty {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.produk-unggulan {
+    margin: 40px 0;
+}
+
+.produk-unggulan h2 {
+    color: #750225;
+    margin-bottom: 20px;
+}
+
+.unggulan-card {
+    max-width: 350px;
+    padding: 25px;
+    border: 2px solid #750225;
+    border-radius: 16px;
+    background: #fff8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.label-unggulan {
+    display: inline-block;
+    background: #750225;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.unggulan-card h3 {
+    color: #750225;
+    margin-bottom: 10px;
+}
+
+.unggulan-card p {
+    color: #4c4c4f;
+    line-height: 1.6;
+}
+
+.unggulan-card strong {
+    color: #750225;
+    font-size: 18px;
 }
