@@ -1,4 +1,7 @@
-const rows = document.querySelectorAll("tbody tr");
+const promoButton = document.getElementById("promoButton");
 
-console.log("Jumlah produk pada tabel:", rows.length);
-console.log("Caption tabel:", document.querySelector("caption").textContent);
+if (promoButton) {
+  promoButton.addEventListener("click", function () {
+    promoButton.textContent = "Promo hari ini: tanyakan via WhatsApp Morning Haven";
+  });
+}

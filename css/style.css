@@ -1,785 +1,759 @@
 :root {
-    --color-primary: #8a3961;
-    --color-primary-strong: #a55081;
-    --color-text: #471638;
-    --color-muted: #79594E;
-    --color-surface: #FBF1E7;
-    --color-surface-soft: #F3E4D8;
-    --color-border: #C5A18D;
-    --color-focus: #B8734D;
-    --space-1: 0.5rem;
-    --space-2: 0.75rem;
-    --space-3: 1rem;
-    --space-4: 1.5rem;
-    --space-5: 2rem;
-    --radius-sm: 0.5rem;
-    --radius-md: 0.875rem;
-    --shadow-card: 0 0.5rem 1.5rem rgb(17, 17, 16);
-    --bg-interactive: #873d61;
-    --bg-interactive-strong: #b155a6;
-    --color-on-accent: #c796b6;
-    --radius-lg: 1.25rem;
-    --color-highlight: #b15096;
-    --color-highlight-strong: #b415b4;
-    --color-success: #bd6da2;
-    --color-success-bg: #ac789f;
-    --space-section: clamp(1.5rem, 1rem + 3vw, 3rem);
-    --space-card: clamp(0.75rem, 0.5rem + 1.5vw, 1.25rem);
-    --space-hero: clamp(1rem, 0.5rem + 4vw, 2rem);
-    --text-h2: clamp(1.375rem, 1.1rem + 1.2vw, 1.75rem);
-    --tap-size: 2.75rem;
+  --color-primary: #8a3961;
+  --color-primary-strong: #471638;
+  --color-text: #471638;
+  --color-muted: #7a5068;
+  --color-surface: #fbf1e7;
+  --color-surface-soft: #f3e4d8;
+  --color-border: #c5a18d;
+  --color-focus: #1d4ed8;
+  --color-accent: #b15096;
+  --color-accent-soft: #ecd0e0;
+  --color-accent-hover: #c25fa6;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --shadow-card: 0 0.5rem 1.5rem rgb(71 22 56 / 0.12);
 }
 
-/* ---------- 2. Base ---------- */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+:before,
+:after {
+  box-sizing: border-box;
 }
 
 html {
-    color-scheme: light;
-    -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    color: var(--color-text);
-    background: var(--color-surface-soft);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
+  margin: 0;
+  min-width: 0;
+  color: var(--color-text);
+  background: var(--color-surface-soft);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+audio {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-primary);
+  overflow-wrap: anywhere;
+}
+
+a:hover {
+  color: var(--color-primary-strong);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+.skip-link {
+  position: absolute;
+  top: -5rem;
+  left: var(--space-3);
+  z-index: 9999;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-surface);
+  background: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+  top: var(--space-3);
+}
+
+.container,
+.nav,
+.page {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-width: 0;
+  padding-block: var(--space-3);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 0 0 auto;
+  color: var(--color-text);
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* ===== Menu mobile ===== */
+.mobile-menu {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  margin-left: auto;
+}
+
+.mobile-menu summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: fit-content;
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-primary);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-menu summary:hover {
+  color: var(--color-primary-strong);
+  background: var(--color-surface-soft);
+}
+
+.hamburger {
+  display: inline-block;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.mobile-menu ul {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+
+  width: max-content;
+  min-width: 12rem;
+  max-width: min(15rem, calc(100vw - 2rem));
+
+  margin: 0;
+  padding: var(--space-2);
+
+  list-style: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+}
+
+.mobile-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-menu a {
+  display: block;
+  width: 100%;
+  padding: var(--space-2);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.mobile-menu a:hover {
+  color: var(--color-primary-strong);
+  background: var(--color-surface-soft);
+}
+
+.mobile-menu a[aria-current="page"] {
+  color: var(--color-primary-strong);
+  font-weight: 700;
+  background: var(--color-accent-soft);
+}
+
+.desktop-menu {
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.desktop-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-menu a {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+}
+
+.desktop-menu a[aria-current="page"] {
+  color: var(--color-primary-strong);
+  font-weight: 700;
+  background: var(--color-accent);
+}
+
+.page {
+  padding-block: var(--space-5);
+  min-width: 0;
 }
 
 h1,
 h2,
 h3 {
-    line-height: 1.2;
-    text-wrap: balance;
-    overflow-wrap: break-word;
+  line-height: 1.2;
+  text-wrap: balance;
 }
 
 h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
+  font-size: clamp(2rem, 6vw, 3rem);
 }
 
 h2 {
-    font-size: var(--text-h2);
+  margin-top: var(--space-5);
 }
 
 p,
 li {
-    max-width: 68ch;
+  max-width: 68ch;
 }
 
-img,
-video {
-    max-width: 100%;
-    height: auto;
+/* ===== Hero ===== */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+
+  min-width: 0;
+  padding: var(--space-5);
+
+  color: var(--color-surface);
+  background: var(--color-primary);
+
+  border-radius: var(--radius-md);
 }
 
-audio {
-    max-width: 100%;
+.hero-content,
+.hero-media {
+  min-width: 0;
 }
 
-figure {
-    margin: 0;
+.hero-content {
+  overflow-wrap: anywhere;
 }
 
-.brand-mark {
-    flex: none;
+.hero .eyebrow {
+  color: var(--color-accent);
 }
 
-figcaption,
-caption {
-    color: var(--color-muted);
+.hero-image {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin-left: auto;
+  border-radius: var(--radius-md);
+  object-fit: cover;
 }
 
-a {
-    color: var(--color-primary);
+.hero-media {
+  position: relative;
+  min-width: 0;
 }
 
-a:hover {
-    color: var(--color-primary-strong);
+.hero-badge {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+
+  padding: 0.25rem var(--space-2);
+
+  color: var(--color-primary-strong);
+  font-weight: 800;
+
+  background: var(--color-accent-soft);
+  border-radius: 999px;
 }
 
-:focus-visible {
-    outline: 3px solid var(--color-focus);
-    outline-offset: 3px;
+.hero figcaption {
+  margin-top: var(--space-1);
+  color: var(--color-surface);
 }
 
-/* ---------- 3. Skip link ---------- */
-.skip-link {
-    position: absolute;
-    top: -5rem;
-    left: var(--space-3);
-    padding: var(--space-2) var(--space-3);
-    color: var(--color-surface);
-    background: var(--color-text);
-}
-
-.skip-link:focus {
-    top: var(--space-3);
-}
-
-/* ---------- 4. Header, navigasi, footer ---------- */
-.site-header,
-.site-header {
-    padding: 1rem 1.5rem;
-    background: var(--color-surface);
-    border-bottom: 1px solid var(--color-border);
-}
-
-.site-footer {
-    margin-top: var(--space-5);
-    margin-top: var(--space-section);
-    color: var(--color-muted);
-    text-align: center;
-    border-top: 1px solid var(--color-border);
-    border-bottom: 0;
-}
-
-.nav,
-.page {
-    width: min(100% - 2rem, 60rem);
-    margin-inline: auto;
-}
-
-.page {
-    padding-block: var(--space-5);
-    padding-block: var(--space-section);
-}
-
-/* Flexbox #1: navigasi (main axis = horizontal, cross axis = vertikal) */
-.nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1 rem;
-}
-
-/* Flexbox #2: daftar link navigasi */
-.nav-list {
-    display: flex;
-    flex-direction: row;
-    gap: 0 var(--space-1);
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.nav-list a,
-.brand {
-    display: inline-flex;
-    align-items: center;
-    min-height: var(--tap-size);
-}
-
-.nav-list a {
-    padding-inline: var(--space-2);
-}
-
-.brand {
-    display: inline-flex;
-    gap: var(--space-1);
-    align-items: center;
-    color: var(--color-text);
-    font-weight: 800;
-    text-decoration: none;
-}
-
-.nav a[aria-current="page"] {
-    padding: var(--space-1) var(--space-2);
-    color: var(--color-primary-strong);
-    font-weight: 700;
-    text-decoration: none;
-    background: var(--color-highlight);
-    border-radius: var(--radius-sm);
-}
-
-/* ---------- 5. Teks pendukung & seksi ---------- */
 .eyebrow {
-    margin: 0 0 var(--space-1);
-    color: var(--color-primary);
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.section {
-    margin-top: var(--space-5);
-    margin-top: var(--space-section);
+/* ===== Tombol ===== */
+.button,
+button {
+  display: inline-block;
+  max-width: 100%;
+
+  padding: var(--space-2) var(--space-3);
+
+  color: var(--color-surface);
+  font-weight: 700;
+  text-decoration: none;
+
+  background: var(--color-primary);
+  border: 0;
+  border-radius: var(--radius-sm);
+
+  cursor: pointer;
+  overflow-wrap: anywhere;
 }
 
-.section-head h2 {
-    margin-bottom: var(--space-1);
-}
-
-.section-head p {
-    margin-top: 0;
-}
-
-.price {
-    color: var(--color-primary-strong);
-    font-weight: 800;
-}
-
-/* ---------- 6. Tombol & tautan tombol ---------- */
-button,
-.button {
-    display: inline-block;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: var(--tap-size);
-    text-align: center;
-    padding: var(--space-2) var(--space-3);
-    color: var(--color-surface);
-    font: inherit;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    background: var(--color-primary);
-    border: 0;
-    border-radius: var(--radius-sm);
-}
-
-button:hover,
-.button:hover {
-    color: var(--color-surface);
-    background: var(--color-primary-strong);
-}
-
-button.button-secondary {
-    color: var(--color-primary-strong);
-    background: var(--color-surface);
-    border: 1px solid var(--color-primary);
-}
-
-button.button-secondary:hover {
-    color: var(--color-primary-strong);
-    background: var(--color-highlight);
+.button:hover,
+button:hover {
+  color: var(--color-surface);
+  background: var(--color-primary-strong);
 }
 
 .hero button {
-    color: var(--color-text);
-    background: var(--color-highlight);
+  color: var(--color-text);
+  background: var(--color-accent);
 }
 
 .hero button:hover {
-    color: var(--color-text);
-    background: var(--color-highlight-strong);
+  color: var(--color-text);
+  background: var(--color-accent-hover);
 }
 
-.hero button.is-promo {
-    color: var(--color-primary-strong);
-    background: var(--color-surface);
+/* ===== Kartu produk ===== */
+.product-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+
+  min-width: 0;
+  width: 100%;
 }
 
-/* ---------- 7. Kartu (komponen dasar) ---------- */
-.product-card,
-.media-card,
-.form-card,
-.side-card,
-.value-item,
-.contact-card,
-.aside-note,
-.price-table-wrap {
-    padding: var(--space-3);
-.price-table-wrap,
-.table-scroll {
-    padding: var(--space-card);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-card);
-}
-}
-
-/* Flexbox #3: card vertikal (main axis = vertikal) */
 .product-card {
-    position: relative; /* containing block untuk .product-badge */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  padding: var(--space-3);
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+
+  overflow-wrap: anywhere;
 }
 
 .product-card h3,
 .product-card p {
-    margin: 0;
-}
-
-.product-img {
-    width: 100%;
-    max-width: 250px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: var(--radius-sm);
-}
-
-.product-card figcaption {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
-    margin-top: var(--space-1);
-}
-
-/* Flexbox #4: judul + harga (main axis = horizontal) */
-.product-header {
-    display: flex;
-    gap: var(--space-2);
-    align-items: baseline;
-    justify-content: space-between;
-}
-
-/* Positioning: badge menempel di dalam card (containing block = .product-card) */
-article.product-card {
-    padding-top: var(--space-5); /* ruang untuk badge agar tidak menimpa judul */
-    padding-top: var(--space-5);
+  min-width: 0;
 }
 
 .product-badge {
-    position: absolute;
-    top: var(--space-1);
-    right: var(--space-3);
-    padding: 0 var(--space-2);
-    color: var(--color-primary-strong);
-    font-size: 0.875rem;
-    font-weight: 800;
-    background: var(--color-highlight);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+  align-self: flex-start;
+
+  padding: 0.25rem var(--space-2);
+
+  color: var(--color-primary-strong);
+  font-size: 0.875rem;
+  font-weight: 800;
+
+  background: var(--color-accent-soft);
+  border-radius: 999px;
 }
 
-.new-badge {
-    align-self: flex-start;
-    padding: 0 var(--space-2);
-    color: var(--color-on-accent);
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    background: var(--bg-interactive);
-    border-radius: var(--radius-lg);
-}
-
-/* Flexbox #5: aksi card (main axis = horizontal, wrap) */
-.card-actions a:not(.button) {
-    display: inline-flex;
-    align-items: center;
-    min-height: var(--tap-size);
+.price {
+  color: var(--color-primary-strong);
+  font-weight: 800;
 }
 
 .card-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    align-items: center;
-    margin-top: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+
+  margin-top: auto;
+  padding-top: var(--space-2);
 }
 
-/* ---------- 8. CSS Grid: hero & halaman ---------- */
-/* Grid hero (semua halaman): 2 kolom (teks | gambar) */
-.hero {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-    align-items: center;
-    padding: var(--space-5);
-    padding: var(--space-hero);
-    color: var(--color-surface);
-    background: var(--color-primary);
-    border-radius: var(--radius-md);
+.card-actions a {
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
-.hero :focus-visible {
-    outline-color: var(--color-highlight);
-}
-
-.hero .eyebrow {
-    color: var(--color-highlight);
-}
-
-.hero-content {
-    min-width: 0; /* cegah teks panjang melebarkan track Grid */
-    min-width: 0;
-}
-
-.hero-image {
-    width: 100%;
-    max-width: 350px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: var(--radius-md);
-    display: block;
-    margin: 0 auto;
-}
-
-/* Grid katalog produk: 3 kolom */
-.product-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 24px;
-    align-items: start;
-}
-
-.product-card {
-    width: 100%;
-    min-width: 0;
-}
-/* Varian beranda: 4 menu favorit -> 2 x 2 */
-.product-grid--two {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-/* Grid galeri: 2 kolom */
-.product-grid,
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-3);
-    max-width: 850px;
-    margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+
+  min-width: 0;
 }
 
-.media-card figcaption {
-    margin-top: var(--space-1);
+.media-card {
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-3);
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+
+  overflow-wrap: anywhere;
 }
 
 .media-card img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    object-position: contain;
-    border-radius: var(--radius-sm);
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
 }
 
-/* Grid nilai (Tentang) dan info kontak (Beranda): 3 kolom */
-.values-grid,
-.contact-card {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-columns: 1fr;
-    gap: var(--space-3);
+figcaption,
+caption {
+  color: var(--color-muted);
 }
 
-.value-item h3,
-.value-item p,
-.contact-item p {
-    margin: 0;
+.info-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
 }
 
-.contact-card {
-    margin-top: var(--space-3);
+.info-section h2 {
+  grid-column: 1 / -1;
 }
 
-.aside-note {
-    margin-top: var(--space-5);
-    margin-top: var(--space-section);
-    background: var(--color-highlight);
+.info-card {
+  min-width: 0;
+  padding: var(--space-3);
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+
+  overflow-wrap: anywhere;
 }
 
-.category-list {
-    padding-left: var(--space-4);
+.nilai-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: stretch;
 }
 
-/* ---------- 9. Tabel ---------- */
-.price-table-wrap {
+.nilai-list .info-card {
+  flex: 1 1 12rem;
+}
+
 .table-scroll {
-    max-width: 100%;
-    overflow-x: auto;
-}
+  width: 100%;
+  max-width: 100%;
+
+  margin-block: var(--space-3);
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  overscroll-behavior-x: contain;
 }
 
 .table-scroll:focus-visible {
-    outline: 3px solid var(--color-focus);
-    outline-offset: 3px;
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
 }
 
-.price-cell {
-    white-space: nowrap;
+.table-scroll table {
+  width: 100%;
+  min-width: 40rem;
+
+  margin: 0;
+
+  background: var(--color-surface);
+  border-collapse: collapse;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 caption {
-    margin-bottom: var(--space-2);
-    font-weight: 700;
-    text-align: left;
+  padding-bottom: var(--space-2);
+  font-weight: 700;
+  text-align: left;
 }
 
 th,
 td {
-    padding: var(--space-2);
-    text-align: left;
-    border: 1px solid var(--color-border);
+  padding: var(--space-2);
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid var(--color-border);
 }
 
 th {
-    background: var(--color-surface-soft);
+  background: var(--color-surface-soft);
 }
 
-/* ---------- 10. Media ---------- */
-.video-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
+form {
+  min-width: 0;
+  padding: var(--space-3);
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
 }
 
-.video-wrap video,
-.audio-player {
-    width: 100%;
-}
-
-.video-caption {
-    margin: 0;
-    color: var(--color-muted);
-}
-
-/* ---------- 11. HALAMAN UTAMA P06: Kontak ---------- */
-/* Grid level 1: 2 kolom (form | sidebar), kolom form lebih lebar */
-.contact-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-4);
-    align-items: start;
-}
-
-/* Grid level 2 (nested): 2 kolom field di dalam form */
-.form-card {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-3);
-}
-
-.form-note,
-.field-full {
-    grid-column: 1 / -1;
-}
-
-.form-note {
-    margin: 0;
-    color: var(--color-muted);
+.field {
+  min-width: 0;
+  margin-bottom: var(--space-3);
 }
 
 .field label,
 legend {
-    display: block;
-    margin-bottom: var(--space-1);
-    font-weight: 700;
+  display: block;
+  margin-bottom: var(--space-1);
+  font-weight: 700;
 }
 
 .field input,
 .field select,
 .field textarea {
-    width: 100%;
-    padding: var(--space-2);
-    color: inherit;
-    font: inherit;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  padding: var(--space-2);
+
+  color: var(--color-text);
+  font: inherit;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
 }
 
-.field input:focus-visible,
-.field select:focus-visible,
-.field textarea:focus-visible {
-    border-color: var(--bg-interactive-strong);
-}
-
-.help-text {
-    margin: var(--space-1) 0 0;
-    color: var(--color-muted);
-    font-size: 0.875rem;
+.field textarea {
+  resize: vertical;
 }
 
 fieldset {
-    min-width: 0;
-    margin: 0;
-    padding: var(--space-3);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
+  min-width: 0;
+  margin: 0 0 var(--space-3);
+  padding: var(--space-3);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+fieldset label {
+  display: block;
+  margin-block: var(--space-2);
 }
 
 input[type="radio"],
 input[type="checkbox"] {
-    width: auto;
-    flex: none;
-    width: 1.25rem;
-    height: 1.25rem;
-    margin: 0;
-}
-
-/* Flexbox #6: grup pilihan radio (main axis = horizontal, wrap) */
-.choice-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2) var(--space-4);
-}
-
-/* Flexbox #7: radio + label sebaris (cross axis = center) */
-.choice {
-    display: flex;
-    gap: var(--space-1);
-    align-items: center;
-}
-
-.choice label {
-    display: inline;
-    display: inline-block;
-    margin: 0;
-    padding-block: var(--space-1);
-    font-weight: 400;
-}
-
-/* Flexbox #8: form action (main axis = horizontal, rata kanan) */
-.form-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    align-items: center;
-    justify-content: flex-end;
-}
-
-/* Flexbox #9: sidebar (main axis = vertikal) */
-.contact-side {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-}
-
-.side-card h3 {
-    margin-top: 0;
-}
-
-.side-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    margin: 0;
-}
-
-.side-item dt {
-    font-weight: 700;
-}
-
-.side-item dd {
-    margin: 0;
+  width: auto;
+  max-width: none;
 }
 
 #preview-form {
-    margin: 0;
-    padding: var(--space-3);
-    overflow-wrap: anywhere;
-    white-space: pre-wrap;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
+  max-width: 100%;
+  padding: var(--space-3);
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  overflow-x: auto;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
 }
 
-.status-msg {
-    margin: 0 0 var(--space-2);
-    padding: var(--space-2) var(--space-3);
-    font-weight: 700;
-    border-radius: var(--radius-sm);
+pre {
+  max-width: 100%;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  overflow-x: auto;
 }
 
-.status-success {
-    color: var(--color-success);
-    background: var(--color-success-bg);
-    border: 2px solid var(--color-success);
+.contact-section {
+  min-width: 0;
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  overflow-wrap: anywhere;
 }
 
-@media (min-width: 42rem) {
-    .gallery-grid,
-    .product-grid--two,
-    .form-card {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+.site-footer {
+  margin-top: var(--space-5);
+  padding: var(--space-4) var(--space-3);
+
+  color: var(--color-muted);
+  text-align: center;
+
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.site-footer p {
+  margin: 0 auto;
+}
+
+@media (min-width: 40rem) {
+
+  .container,
+  .nav,
+  .page {
+    width: min(100% - 3rem, 70rem);
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .desktop-menu {
+    display: flex;
+  }
+
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nilai-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .info-card {
+    flex: 1 1 12rem;
+  }
 }
 
 @media (min-width: 48rem) {
-    .hero {
-        grid-template-columns: 1.2fr 0.8fr;
-    }
 
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  .hero {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: var(--space-5);
+  }
 
-    .values-grid,
-    .contact-card {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .info-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-card,
+  .media-card,
+  .info-card {
+    padding: var(--space-4);
+  }
 }
 
 @media (min-width: 60rem) {
-    .nav {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
 
-    .product-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+  .container,
+  .nav,
+  .page {
+    width: min(100% - 4rem, 70rem);
+  }
 
-    .product-grid--two {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .contact-layout {
-        grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-    }
+  .hero {
+    gap: var(--space-5);
+  }
+}
+.product-summary {
+  margin: var(--space-2) 0 var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface-soft);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-weight: 600;
 }
 
-/* Membuat produk berjajar ke samping */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-    align-items: stretch;
-}
-
-.product-card {
-    min-width: 0;
-}
-
-.product-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: var(--radius-sm);
-}
-
-.js-product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: var(--space-4);
-}
-
-.js-product-card {
-  padding: var(--space-4);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
+.product-detail {
+  margin: 0.4rem 0;
+  font-size: 0.875rem;
+  color: var(--color-muted);
 }
 
 .stock-badge {
   display: inline-flex;
-  margin-block-start: var(--space-2);
+  width: fit-content;
+  margin-block: var(--space-1);
   padding: 0.25rem 0.6rem;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -789,7 +763,7 @@ input[type="checkbox"] {
 }
 
 .stock-badge.warning {
-  background: #fef3c7;
+  background: var(--color-accent-soft);
   color: #92400e;
 }
 
@@ -798,45 +772,133 @@ input[type="checkbox"] {
   color: #991b1b;
 }
 
-.produk-unggulan {
-    margin: 40px 0;
+#product-list .product-card {
+  gap: 0.5rem;
 }
 
-.produk-unggulan h2 {
-    color: #750225;
-    margin-bottom: 20px;
+@media (max-width: 480px) {
+  .product-summary {
+    font-size: 0.875rem;
+    padding: var(--space-2);
+  }
 }
 
-.unggulan-card {
-    max-width: 350px;
-    padding: 25px;
-    border: 2px solid #750225;
-    border-radius: 16px;
-    background: #fff8f0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.no-top-margin {
+  margin-top: var(--space-1);
 }
 
-.label-unggulan {
-    display: inline-block;
-    background: #750225;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    margin-bottom: 12px;
+.category-list {
+  padding-left: 1.25rem;
 }
 
-.unggulan-card h3 {
-    color: #750225;
-    margin-bottom: 10px;
+.category-list li {
+  margin-block: var(--space-1);
 }
 
-.unggulan-card p {
-    color: #4c4c4f;
-    line-height: 1.6;
+.section-note {
+  color: var(--color-muted);
 }
 
-.unggulan-card strong {
-    color: #750225;
-    font-size: 18px;
+.featured-card {
+  position: relative;
+}
+
+.featured-card .product-badge {
+  position: static;
+  align-self: flex-start;
+  margin-bottom: var(--space-2);
+}
+
+.featured-card .card-actions {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.product-highlight {
+  margin: 0 0 var(--space-3);
+  color: var(--color-primary-strong);
+  font-weight: 700;
+}
+
+.product-grid-2 .product-card h3 {
+  margin-block: 0 var(--space-1);
+}
+
+.product-grid-2 .product-card p {
+  margin-block: 0;
+}
+
+.product-grid-2 .product-card .price {
+  margin-top: var(--space-2);
+  font-size: 1.1rem;
+}
+
+@media (min-width: 40rem) {
+  .product-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.table-box {
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.table-box .table-scroll {
+  margin-block: 0;
+}
+
+.table-box tbody tr:nth-child(even) {
+  background: var(--color-surface-soft);
+}
+
+
+/* ===== Harga promo ===== */
+.price-normal {
+  color: var(--color-muted);
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.price-promo {
+  color: #991b1b;
+  font-weight: 800;
+}
+
+.discount-badge {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  color: #991b1b;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: #fee2e2;
+  border-radius: 999px;
+}
+/* ===== Tambahan Morning Haven ===== */
+.brand img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.product-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-2);
+}
+
+@media (min-width: 48rem) {
+  .product-grid.menu-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 60rem) {
+  .product-grid.menu-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }

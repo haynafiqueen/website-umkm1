@@ -12,22 +12,37 @@
 </head>
 
 <body>
-    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
     <header class="site-header">
-        <nav class="nav" aria-label="Navigasi utama">
-            <a class="brand" href="index.html">
-                <img class="brand-mark" src="assest/images/logo_morninghaven.jpeg" alt="logo Morning Haven" width="34" height="34">
-                Morning Haven
-            </a>
-            <ul class="nav-list">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="tentang.html">Tentang Kami</a></li>
-                <li><a href="produk.html">Produk</a></li>
-                <li><a class="active" aria-current="page" href="galeri.html">Galeri</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
-            </ul>
-        </nav>
-    </header>
+  <nav class="nav container" aria-label="Navigasi utama">
+    <a class="brand" href="index.html">
+      <img src="assest/images/logo_morninghaven.jpeg" width="40" height="40" alt="Logo Morning Haven">
+      <span>Morning Haven</span>
+    </a>
+
+    <details class="mobile-menu">
+      <summary aria-label="Buka menu navigasi">
+        <span class="hamburger" aria-hidden="true">☰</span>
+        <span>Menu</span>
+      </summary>
+
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentang.html">Tentang Kami</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a aria-current="page" href="galeri.html">Galeri</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+    </details>
+
+    <ul class="desktop-menu">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentang.html">Tentang Kami</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a aria-current="page" href="galeri.html">Galeri</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </nav>
+</header>
 
     <main id="konten" class="page">
     <main id="konten" class="page" tabindex="-1">
