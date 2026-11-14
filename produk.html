@@ -6,7 +6,7 @@
   <meta name="description" content="Morning Haven, teman nyantai dan nongkrong di Bojong, Pekalongan.">
   <title>Menu Morning Haven</title>
   <link rel="stylesheet" href="css/style.css">
-  
+
   <script src="js/app.js" defer></script>
 </head>
 <body>
@@ -59,52 +59,126 @@
     </figure>
   </section>
 
+  <!-- DAFTAR MENU -->
   <section aria-labelledby="produk-js-title">
     <h2 id="produk-js-title">Daftar Menu</h2>
     <p id="product-summary" class="product-summary" aria-live="polite">4 produk tersedia dari 4 data, total stok 51 item.</p>
     <p id="product-highlight" class="product-highlight">Produk unggulan: Kopi Vanila Latte</p>
 
     <div class="product-grid product-grid-2" id="product-list">
+
+      <!-- KOPI VANILA LATTE -->
       <article class="product-card js-product-card">
         <h3>Kopi Vanila Latte</h3>
         <p class="product-detail">Kopi racikan kedai · Gelas</p>
         <p>Paduan espresso premium dengan susu vanila yang creamy.</p>
-        <p class="price"><del class="price-normal">Rp20.000</del>
+        <p class="price">
+          <del class="price-normal">Rp20.000</del>
           <span class="price-promo">Rp18.000</span>
-          <span class="discount-badge">10%</span></p>
-        <p class="stock-badge ">Tersedia</p>
-        <p class="product-detail">Siap dipesan</p>
+          <span class="discount-badge">10%</span>
+        </p>
+
+        <div class="product-actions">
+          
+      <a class="button" href="https://wa.me/082314117776?text=Halo%20Morning%20Haven%2C%20saya%20ingin%20bertanya%20tentang%20Kopi%20Vanila%20Latte." 
+        target="_blank" rel="noopener">
+        Tanya Produk
+    </a>
+      
+      <a class="lihat-tabel-harga" href="#tabel-harga">
+        Lihat Tabel Harga
+  </a>
+
       </article>
+
+      <!-- AMERICANO ARABICA -->
       <article class="product-card js-product-card">
         <h3>Americano Arabica</h3>
         <p class="product-detail">Kopi racikan kedai · Gelas</p>
         <p>Diseduh dingin 13 jam, rasa arabica manis alami.</p>
         <p class="price">Rp25.000</p>
-        <p class="stock-badge ">Tersedia</p>
-        <p class="product-detail">Siap dipesan</p>
+
+         <div class="product-actions">
+          
+      <a class="button" href="https://wa.me/082314117776?text=Halo%20Morning%20Haven%2C%20saya%20ingin%20bertanya%20tentang%20Kopi%20Vanila%20Latte." 
+        target="_blank" rel="noopener">
+        Tanya Produk
+    </a>
+      
+      <a class="lihat-tabel-harga" href="#tabel-harga">
+        Lihat Tabel Harga
+  </a>
+
       </article>
+
+      <!-- CARAMEL MACCHIATO -->
       <article class="product-card js-product-card">
         <h3>Caramel Macchiato</h3>
         <p class="product-detail">Kopi racikan kedai · Gelas</p>
         <p>Manisnya caramel dan pahitnya espresso dalam satu cangkir.</p>
-        <p class="price"><del class="price-normal">Rp27.000</del>
+        <p class="price">
+          <del class="price-normal">Rp27.000</del>
           <span class="price-promo">Rp24.300</span>
-          <span class="discount-badge">10%</span></p>
-        <p class="stock-badge ">Tersedia</p>
-        <p class="product-detail">Siap dipesan</p>
+          <span class="discount-badge">10%</span>
+        </p>
+
+        <div class="product-actions">
+          
+      <a class="button" href="https://wa.me/082314117776?text=Halo%20Morning%20Haven%2C%20saya%20ingin%20bertanya%20tentang%20Kopi%20Vanila%20Latte." 
+        target="_blank" rel="noopener">
+        Tanya Produk
+    </a>
+      
+      <a class="lihat-tabel-harga" href="#tabel-harga">
+        Lihat Tabel Harga
+  </a>
+
       </article>
+
+      <!-- LOTUS LATTE -->
       <article class="product-card js-product-card">
         <h3>Lotus Latte</h3>
         <p class="product-detail">Kopi racikan kedai · Gelas</p>
         <p>Lotus latte yang manisnya pas, gurih, dan creamy.</p>
         <p class="price">Rp28.000</p>
-        <p class="stock-badge warning">Stok terbatas</p>
-        <p class="product-detail">Siap dipesan</p>
+
+    <div class="product-actions">
+          
+      <a class="button" href="https://wa.me/082314117776?text=Halo%20Morning%20Haven%2C%20saya%20ingin%20bertanya%20tentang%20Kopi%20Vanila%20Latte." 
+        target="_blank" rel="noopener">
+        Tanya Produk
+    </a>
+      
+      <a class="lihat-tabel-harga" href="#tabel-harga">
+        Lihat Tabel Harga
+  </a>
+
+</div>
       </article>
+
     </div>
   </section>
 
-  <section aria-labelledby="harga-title">
+  <!-- PRODUK UNGGULAN UMKM -->
+  <section class="product-section" aria-labelledby="produk-title">
+    <div class="section-heading">
+      <p class="eyebrow">Katalog</p>
+      <h2 id="produk-title">Produk Unggulan UMKM</h2>
+      <p id="produk-status" class="produk-status">Produk belum dimuat.</p>
+    </div>
+
+    <div class="filter-bar" aria-label="Filter kategori produk">
+      <button type="button" class="filter-button is-active" data-filter="Semua">Semua</button>
+      <button type="button" class="filter-button" data-filter="Kopi">Kopi</button>
+      <button type="button" class="filter-button" data-filter="Bundling">Bundling</button>
+      <button type="button" class="filter-button" data-filter="Aksesori">Aksesori</button>
+    </div>
+
+    <div id="produk-grid" class="product-grid" aria-live="polite"></div>
+  </section>
+
+ <!-- DAFTAR HARGA -->
+<section id="tabel-harga" aria-labelledby="harga-title">
     <h2 id="harga-title">Daftar Harga</h2>
     <p class="section-note">Harga dan ketersediaan menu Morning Haven.</p>
 
@@ -155,6 +229,7 @@
       </div>
     </div>
   </section>
+
 </main>
 
 <footer class="site-footer">
